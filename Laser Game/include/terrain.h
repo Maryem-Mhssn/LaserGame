@@ -5,12 +5,26 @@
 class terrain
 {
     public:
+        // terrain initialisé par le joueur
+        terrain(int dimensions);
+        //terrain de forme standard (à définir)
         terrain();
-        virtual ~terrain();
-
-    protected:
+        void afficheTerrain();
+        void placeLaser();
+        void placemirroir();
+        void place(cible);
 
     private:
+        //dimension du terrain
+        int d_dim;
+        //Laser
+        Laser d_laser;
+        //mirroir
+        vector <mirroir> d_mirroir;
+        //cible
+        cible d_cible;
+
+
 
 
 };
