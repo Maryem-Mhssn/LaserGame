@@ -36,10 +36,12 @@
 		</Compiler>
 		<Unit filename="include/mirroir.h" />
 		<Unit filename="include/partie du jeu.h" />
+		<Unit filename="include/position.h" />
 		<Unit filename="include/terrain.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/mirroir.cpp" />
 		<Unit filename="src/partie du jeu.cpp" />
+		<Unit filename="src/position.cpp" />
 		<Unit filename="src/terrain.cpp" />
 		<Extensions />
 	</Project>
