@@ -2,11 +2,11 @@
 #define PARTIE DU JEU_H
 
 
-class partie du jeu
+class partieJeu
 {
     public:
-        partie du jeu();
-        virtual ~partie du jeu();
+        partieJeu();
+        virtual ~partieJeu();
 
     protected:
 

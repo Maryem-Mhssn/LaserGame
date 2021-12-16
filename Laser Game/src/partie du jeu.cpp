@@ -1,11 +1,11 @@
 #include "partie du jeu.h"
 
-partie du jeu::partie du jeu()
+partieJeu::partieJeu()
 {
     //ctor
 }
 
-partie du jeu::~partie du jeu()
+partieJeu::~partieJeu()
 {
     //dtor
 }

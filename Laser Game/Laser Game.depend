@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1639148888 source:d:\college things\l3 miage\lasergame\laser game\main.cpp
+	<iostream>
+
+1639148888 source:d:\college things\l3 miage\lasergame\laser game\src\mirroir.cpp
+	"mirroir.h"
+
+1639148888 d:\college things\l3 miage\lasergame\laser game\include\mirroir.h
+
+1639149227 source:d:\college things\l3 miage\lasergame\laser game\src\position.cpp
+	"position.h"
+
+1639149227 d:\college things\l3 miage\lasergame\laser game\include\position.h
+
