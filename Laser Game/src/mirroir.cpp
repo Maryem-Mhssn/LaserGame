@@ -1,11 +1,10 @@
 #include "mirroir.h"
 
-mirroir::mirroir()
+mirroir::mirroir(int x, int y, char type): box{x,y}, d_type{type}
 {
-    //ctor
-}
 
-mirroir::~mirroir()
+}
+char mirroir::type() const
 {
-    //dtor
+    return d_type;
 }

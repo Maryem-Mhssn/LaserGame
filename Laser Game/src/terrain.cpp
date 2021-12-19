@@ -1,34 +1,35 @@
 #include "terrain.h"
+#include <iostream>
+using std::cout;
+using std::endl;
 
-terrain::terrain(int dimensions): d_dim{dimensions}
+terrain::terrain(): d_cible{},d_laser{}
+{}
+
+
+void terrain::initialiser()
 {
-
-}
-
-terrain::terrain(): terrain{10}
-{
-
-}
-void terrain:: afficheTerrain()
-{
-    //initialisation
-    char tab[d_dim][d_dim]={' '};
-    for (int i=0; i<d_dim; i++){
-        for(int j=0; j<d_dim; j++){
-            if(i==0 || j==0 || i==d_dim-1 || j==d_dim-1) tab[i][j]='x';
+    for (int i=0; i<20; i++){
+        for(int j=0; j<20; j++){
+            if(i==0 || j==0 || i==19 || j==19) d_terrain[i][j]='*';
         };
     };
-    //pour afficher le laser
-    tab[d_laser.x()][d_laser.y()]='@';
-    //On fait pareil pour la cible et les mirroirs.
-    //...
+    //juste pour tester
+    //d_cible.moveTo(0,5);
+    //d_laser.moveTo(19,7);
+    d_terrain[d_cible.x()][d_cible.y()]='@';
+    d_terrain[d_laser.x()][d_laser.y()]='#';
 
-    //Affichage
-     for (int i=0; i<length; i++)
+}
+
+void terrain:: afficheTerrain()
+{
+
+     for (int i=0; i<20; i++)
      {
-         for (int j=0; j<length; j++)
+         for (int j=0; j<20; j++)
        {
-              cout<<tab[i][j]<<" ";
+              cout<<d_terrain[i][j]<<" ";
        }
        cout<<endl;
      };
@@ -42,7 +43,7 @@ void terrain ::placemirroir()
 {
 
 }
-void terrain ::place(cible)
+void terrain ::placecible()
 {
 
 }

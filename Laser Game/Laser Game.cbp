@@ -34,19 +34,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="box.h" />
+		<Unit filename="include/box.h" />
 		<Unit filename="include/cible.h" />
 		<Unit filename="include/laser.h" />
 		<Unit filename="include/mirroir.h" />
-		<Unit filename="include/partie du jeu.h" />
-		<Unit filename="include/position.h" />
+		<Unit filename="include/mur.h" />
+		<Unit filename="include/partieDuJeu.h" />
 		<Unit filename="include/terrain.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/box.cpp" />
 		<Unit filename="src/cible.cpp" />
 		<Unit filename="src/laser.cpp" />
 		<Unit filename="src/mirroir.cpp" />
-		<Unit filename="src/partie du jeu.cpp" />
-		<Unit filename="src/position.cpp" />
+		<Unit filename="src/mur.cpp" />
+		<Unit filename="src/partieDuJeu.cpp" />
 		<Unit filename="src/terrain.cpp" />
 		<Extensions />
 	</Project>

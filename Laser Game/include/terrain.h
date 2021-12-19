@@ -1,31 +1,31 @@
 #ifndef TERRAIN_H
 #define TERRAIN_H
-
-
+#include "box.h"
+#include "cible.h"
+#include "laser.h"
+#
 class terrain
 {
     public:
-        // terrain initialisé par le joueur
-        terrain(int dimensions);
         //terrain de forme standard (à définir)
         terrain();
+        void initialiser();
         void afficheTerrain();
         void placeLaser();
         void placemirroir();
-        void place(cible);
+        void placecible();
 
     private:
-        //dimension du terrain
-        int d_dim;
         //Laser
-        Laser d_laser;
+        laser d_laser;
         //mirroir
-        vector <mirroir> d_mirroir;
+       // vector <mirroir> d_mirroir;
         //cible
         cible d_cible;
-
-
-
+        //murs
+      // vector <mur> d_mur;
+        //terrain sous forme de matrice
+        char d_terrain[20][20]={' '};
 
 };
 

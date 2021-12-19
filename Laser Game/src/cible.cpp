@@ -1,24 +1,14 @@
 #include "cible.h"
 
-cible::cible(position p, bool t) : d_pos{p}, d_touched{false}{}
-cible::cible(int x, int y): d_pos{x,y}, d_toucher{false}{}
-int cible::x()const
+cible::cible() : box{0,0}, d_touched{false}
 {
-    return d_pos.x();
+
 }
-int cible::y()const
+void cible::setTouched()
 {
-    return d_pos.y();
+    d_touched=true;
 }
-void cible::create(position p)
-{
-    cible{p, false};
-}
-void cible::moveTo(position p)
-{
-    d_pos = p;
-}
-bool touched()
+bool cible::touched() const
 {
     return d_touched;
 }

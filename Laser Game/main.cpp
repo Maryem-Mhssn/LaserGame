@@ -1,9 +1,11 @@
 #include <iostream>
+#include "terrain.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+    terrain t{};
+    t.initialiser();
+    t.afficheTerrain();
 }
