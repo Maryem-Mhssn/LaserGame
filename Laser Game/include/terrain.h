@@ -3,7 +3,8 @@
 #include "box.h"
 #include "cible.h"
 #include "laser.h"
-#
+#define DIM 20
+
 class terrain
 {
     public:
@@ -14,6 +15,8 @@ class terrain
         void placeLaser();
         void placemirroir();
         void placecible();
+        void sauvegarderTerrain();
+        void importerTerrain();
 
     private:
         //Laser
@@ -25,7 +28,7 @@ class terrain
         //murs
       // vector <mur> d_mur;
         //terrain sous forme de matrice
-        char d_terrain[20][20]={' '};
+        char d_terrain[DIM][DIM]={' '};
 
 };
 

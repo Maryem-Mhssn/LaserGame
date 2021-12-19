@@ -1,11 +1,9 @@
 #include <iostream>
 #include "terrain.h"
-
+#include "partieDuJeu.h"
 using namespace std;
 
 int main()
 {
-    terrain t{};
-    t.initialiser();
-    t.afficheTerrain();
+ partieJeu p{};
 }
