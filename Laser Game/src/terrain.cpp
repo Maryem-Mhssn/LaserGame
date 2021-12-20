@@ -3,7 +3,7 @@
 using std::cout;
 using std::endl;
 
-terrain::terrain(): d_cible{},d_laser{}
+terrain::terrain(): d_cible{},d_laser{}, d_mur{}
 {}
 
 
@@ -35,15 +35,35 @@ void terrain:: afficheTerrain()
      };
 
 }
+
+
 void terrain ::placeLaser()
 {
-
+    int x=rand()% DIM-1;
+    int y=rand()% DIM-1;
+ 
+    
+    if(x==0||y==0||x==DIM-1||y==DIM-1){
+        d_laser.moveTo(x,y);
+    }
 }
+
+
+
 void terrain ::placemirroir()
 {
-
+  
+        
 }
+
 void terrain ::placecible()
 {
-
+    int x=rand()% DIM-1;
+    int y=rand()% DIM-1;
+    
+    if(x==0||y==0||x==DIM-1||y==DIM-1){
+        d_cible.moveTo(x,y);
+    }
 }
+
+
