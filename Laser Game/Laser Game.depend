@@ -110,3 +110,55 @@
 	"terrain.h"
 	<iostream>
 
+1640720773 source:d:\college things\l3 miage\nouveau\lasergame\laser game\main.cpp
+	<iostream>
+	"terrain.h"
+	"partieDuJeu.h"
+
+1640722857 d:\college things\l3 miage\nouveau\lasergame\laser game\include\terrain.h
+	"box.h"
+	"cible.h"
+	"laser.h"
+	"mur.h"
+	"mirroir.h"
+	<vector>
+
+1640720773 d:\college things\l3 miage\nouveau\lasergame\laser game\include\box.h
+
+1640720773 d:\college things\l3 miage\nouveau\lasergame\laser game\include\cible.h
+	"box.h"
+
+1640720773 d:\college things\l3 miage\nouveau\lasergame\laser game\include\laser.h
+	"box.h"
+
+1640720773 d:\college things\l3 miage\nouveau\lasergame\laser game\include\mur.h
+
+1640720773 d:\college things\l3 miage\nouveau\lasergame\laser game\include\mirroir.h
+	"box.h"
+
+1640720773 d:\college things\l3 miage\nouveau\lasergame\laser game\include\partiedujeu.h
+	<iostream>
+	"terrain.h"
+
+1640720773 source:d:\college things\l3 miage\nouveau\lasergame\laser game\src\box.cpp
+	"box.h"
+
+1640720773 source:d:\college things\l3 miage\nouveau\lasergame\laser game\src\cible.cpp
+	"cible.h"
+
+1640720773 source:d:\college things\l3 miage\nouveau\lasergame\laser game\src\laser.cpp
+	"laser.h"
+
+1640720773 source:d:\college things\l3 miage\nouveau\lasergame\laser game\src\mirroir.cpp
+	"mirroir.h"
+
+1640720773 source:d:\college things\l3 miage\nouveau\lasergame\laser game\src\mur.cpp
+	"mur.h"
+
+1640723705 source:d:\college things\l3 miage\nouveau\lasergame\laser game\src\partiedujeu.cpp
+	"partieDuJeu.h"
+
+1640725880 source:d:\college things\l3 miage\nouveau\lasergame\laser game\src\terrain.cpp
+	"terrain.h"
+	<iostream>
+

@@ -3,7 +3,12 @@
 #include "box.h"
 #include "cible.h"
 #include "laser.h"
+#include "mur.h"
+#include "mirroir.h"
+
 #define DIM 20
+
+#include <vector>
 
 class terrain
 {
@@ -22,11 +27,11 @@ class terrain
         //Laser
         laser d_laser;
         //mirroir
-       // vector <mirroir> d_mirroir;
+       std::vector <mirroir> d_mirroir;
         //cible
         cible d_cible;
         //murs
-      // vector <mur> d_mur;
+      std::vector <mur> d_mur;
         //terrain sous forme de matrice
         char d_terrain[DIM][DIM]={' '};
 

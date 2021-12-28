@@ -70,6 +70,11 @@ void partieJeu::lancerPartie()
                         terrain t{};
                         t.initialiser();
                         t.afficheTerrain();
+                        for(int i=0; i<=2; ++i)
+                        {
+                            t.placemirroir();
+                        }
+                        t.afficheTerrain();
                         quitBool = true;
                         break;
                         }
