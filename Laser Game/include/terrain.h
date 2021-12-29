@@ -1,14 +1,16 @@
 #ifndef TERRAIN_H
 #define TERRAIN_H
-#include "box.h"
-#include "cible.h"
-#include "laser.h"
-#include "mur.h"
-#include "mirroir.h"
+#include "box.hpp"
+#include "cible.hpp"
+#include "Laser.hpp"
+#include "mur.hpp"
+#include "mirroir.hpp"
+#include <vector>
+
+
+
 
 #define DIM 20
-
-#include <vector>
 
 class terrain
 {
@@ -20,6 +22,7 @@ class terrain
         void placeLaser();
         void placemirroir();
         void placecible();
+        
         void sauvegarderTerrain();
         void importerTerrain();
 
@@ -31,10 +34,11 @@ class terrain
         //cible
         cible d_cible;
         //murs
-      std::vector <mur> d_mur;
+        std::vector <mur> d_mur;
         //terrain sous forme de matrice
         char d_terrain[DIM][DIM]={' '};
 
 };
 
 #endif // TERRAIN_H
+

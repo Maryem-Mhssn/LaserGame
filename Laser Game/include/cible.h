@@ -1,11 +1,12 @@
 #ifndef CIBLE_H
 #define CIBLE_H
-#include "box.h"
+#include "box.hpp"
 
 class cible : public box
 {
 public:
     cible();
+    cible(int x, int y, char c);
     void setTouched();
     bool touched() const;
 

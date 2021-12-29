@@ -6,11 +6,12 @@
 
 #ifndef MUR_H
 #define MUR_H
+#include "box.hpp"
 
 /**
  * @class mur
  */
-class mur {
+class mur: public box {
 public:
     /**
      * @fn mur(int x,int y,int taille)
@@ -29,26 +30,9 @@ public:
      */
     mur(int x, int y);
 
-    /**
-     * @fn char c() const
-     * @brief Renvoie la valeur de d_c
-     * @return d_c
-     */
-    char c() const;
 
-    /**
-     * @fn int x() const
-     * @brief Renvoie la valeur de d_x
-     * @return d_x
-     */
-    int x() const;
-
-    /**
-     * @fn int y() const
-     * @brief Renvoie la valeur de d_y
-     * @return d_y
-     */
-    int y() const;
+   
+  
 
     /**
      * @fn int taille() const
@@ -70,12 +54,11 @@ public:
     void creationHorizontale();
 
 private:
-    char d_c;
-    int d_x;
-    int d_y;
+
     int d_taille;
 
 };
 
 
 #endif //MUR_H
+

@@ -1,6 +1,6 @@
 #ifndef MIRROIR_H
 #define MIRROIR_H
-#include "box.h"
+#include "box.hpp"
 
 class mirroir : public box
 {
