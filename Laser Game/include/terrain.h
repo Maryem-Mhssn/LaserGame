@@ -1,14 +1,11 @@
 #ifndef TERRAIN_H
 #define TERRAIN_H
-#include "box.hpp"
-#include "cible.hpp"
-#include "Laser.hpp"
-#include "mur.hpp"
-#include "mirroir.hpp"
+#include "box.h"
+#include "cible.h"
+#include "Laser.h"
+#include "mur.h"
+#include "mirroir.h"
 #include <vector>
-
-
-
 
 #define DIM 20
 
@@ -22,7 +19,7 @@ class terrain
         void placeLaser();
         void placemirroir();
         void placecible();
-        
+
         void sauvegarderTerrain();
         void importerTerrain();
 

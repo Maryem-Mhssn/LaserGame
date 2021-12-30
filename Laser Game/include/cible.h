@@ -1,6 +1,6 @@
 #ifndef CIBLE_H
 #define CIBLE_H
-#include "box.hpp"
+#include "box.h"
 
 class cible : public box
 {

@@ -1,7 +1,7 @@
-#include "cible.hpp"
+#include "cible.h"
 
 
-cible::cible() : box{0,0,' '}, d_touched{false}
+cible::cible() : box{0,0,'@'}, d_touched{false}
 {}
 
 

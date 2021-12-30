@@ -1,5 +1,5 @@
 
-#include "mur.hpp"
+#include "mur.h"
 /**
  * \file mur.h
  * \author Aurelia Antz
@@ -40,7 +40,7 @@ int mur::taille() const {
  * @brief créé un mur dans le sens vertical
  */
 void mur::creationVerticale() {
-    
+
     for(int i =x() ;i < d_taille;i++){
         mur m{i,y()};
     }

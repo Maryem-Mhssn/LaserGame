@@ -69,6 +69,9 @@ void partieJeu::lancerPartie()
                         cout << "                 LASER GAME" << endl;
                         terrain t{};
                         t.initialiser();
+                        t.placecible();
+                        t.placeLaser();
+                        //t.placecible();
                         t.afficheTerrain();
                         for(int i=0; i<=2; ++i)
                         {

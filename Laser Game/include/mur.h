@@ -6,7 +6,7 @@
 
 #ifndef MUR_H
 #define MUR_H
-#include "box.hpp"
+#include "box.h"
 
 /**
  * @class mur
@@ -31,8 +31,8 @@ public:
     mur(int x, int y);
 
 
-   
-  
+
+
 
     /**
      * @fn int taille() const

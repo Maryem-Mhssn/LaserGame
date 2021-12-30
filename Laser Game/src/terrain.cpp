@@ -1,4 +1,4 @@
-#include "terrain.hpp"
+#include "terrain.h"
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -6,7 +6,7 @@ using std::cin;
 
 terrain::terrain(): d_cible{},d_laser{},d_mur{}
 {
-   
+
 }
 
 
@@ -17,8 +17,8 @@ void terrain::initialiser()
             if(i==0 || j==0 || i==DIM-1 || j==DIM-1) d_terrain[i][j]='*';
         };
     };
-    
-    
+
+
     //juste pour tester
     //d_cible.moveTo(0,5);
     //d_laser.moveTo(19,7);
@@ -27,7 +27,7 @@ void terrain::initialiser()
 
 }
 
-void terrain:: afficheTerrain()
+void terrain::afficheTerrain()
 {
 
      for (int i=0; i<DIM; i++)
@@ -37,29 +37,36 @@ void terrain:: afficheTerrain()
               cout<<d_terrain[i][j]<<" ";
        }
        cout<<endl;
-     };
+     }
 
 }
-void terrain ::placeLaser()
+void terrain::placeLaser()
 {
     int x=rand()% DIM-1;
     int y=rand()% DIM-1;
- 
-    
+
+
     if(x==0||y==0||x==DIM-1||y==DIM-1){
         d_laser.moveTo(x,y);
+        d_terrain[x][y]=d_laser.c();
     }
+    /*int x, y;
+    do
+    {
+        x=rand()% DIM-1;
+        y=rand()% DIM-1;
+    }
+    while(!(x==0||y==0||x==DIM-1||y==DIM-1));
+    d_laser.moveTo(x,y);
+    d_terrain[x][y]=d_laser.c();*/
 }
 
-
-
-void terrain ::placemirroir()
+void terrain::placemirroir()
 {
     int x, y;
     char c;
-    cout<<"Entrez les coordonnŽes de votre miroir "<<endl;
+    cout<<"Entrez les coordonnees de votre miroir "<<endl;
     cin>>x>>y;
-    
     while(x>=DIM)
     {
         cout<<"x est trop grand! "<<endl;
@@ -70,29 +77,36 @@ void terrain ::placemirroir()
         cout<<"y est trop grand! "<<endl;
         cin>>y;
     }
-   
-        cout<<"Entrez le type de mirroir"<<endl;
-        cin>>c;
-
-    while(c!='/'&& c!='\\'){
-    
+    cout<<"Entrez le type de mirroir"<<endl;
+    cin>>c;
+    while(c!='/'&& c!='\\')
+    {
         cout<<"Mirroir inexistant! "<<endl;
         cin>>c;
     }
     mirroir m {x, y, c};
-    d_mirroir.push_back(m);
+    //d_mirroir.push_back(m);
+    d_terrain[x][y]=c;
 }
 
-
-
-void terrain ::placecible()
+void terrain::placecible()
 {
     int x=rand()% DIM-1;
     int y=rand()% DIM-1;
-    
+
     if(x==0||y==0||x==DIM-1||y==DIM-1){
         d_cible.moveTo(x,y);
+        d_terrain[x][y]=d_cible.c();
     }
+    /*int x=0, y=0;
+    do
+    {
+        x=rand()% DIM-1;
+        y=rand()% DIM-1;
+    }
+    while(!(x==0||y==0||x==DIM-1||y==DIM-1));
+    d_cible.moveTo(x,y);
+    d_terrain[x][y]=d_cible.c();*/
 }
 
 

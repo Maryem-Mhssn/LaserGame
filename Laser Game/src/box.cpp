@@ -1,4 +1,4 @@
-#include "box.hpp"
+#include "box.h"
 
 
 box::box(int x, int y,char c): d_x{x}, d_y{y}, d_c{c}
