@@ -64,22 +64,25 @@ void partieJeu::lancerPartie()
                         break;
                     case 'P':
                     case 'p':
-                        //cout<<"Oups! toujours en réalisation ;-)";
+                        //cout<<"Oups! toujours en rï¿½alisation ;-)";
                         {
-                        cout << "                 LASER GAME" << endl;
-                        terrain t{};
-                        t.initialiser();
-                        t.placecible();
-                        t.placeLaser();
-                        //t.placecible();
-                        t.afficheTerrain();
-                        for(int i=0; i<=2; ++i)
-                        {
-                            t.placemirroir();
-                        }
-                        t.afficheTerrain();
-                        quitBool = true;
-                        break;
+                            int nbMiroirs = 0;
+                            cout << "                 LASER GAME" << endl;
+                            terrain t{};
+                            t.initialiser();
+                            t.placecible();
+                            t.placeLaser();
+                            t.afficheTerrain();
+                            cout<<"Combien de miroir(s) souhaitez-vous placer ?"<<endl;
+                            cin>>nbMiroirs;
+                            for(int i=0;i < nbMiroirs; ++i)
+                            {
+                                t.placemirroir();
+                            }
+                            //t.accesLaser().tire();
+                            t.afficheTerrain();
+                            quitBool = true;
+                            break;
                         }
                     case 'Q':
                     case 'q':
