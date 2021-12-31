@@ -2,6 +2,7 @@
 #define LASER_H
 #include "box.h"
 
+#define DIM 20
 
 
 class laser : public box{
