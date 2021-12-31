@@ -2,7 +2,7 @@
 #define TERRAIN_H
 #include "box.h"
 #include "cible.h"
-#include "Laser.h"
+#include "laser.h"
 #include "mur.h"
 #include "mirroir.h"
 #include <vector>
@@ -12,7 +12,7 @@
 class terrain
 {
     public:
-        //terrain de forme standard (à définir)
+        //terrain de forme standard (ï¿½ dï¿½finir)
         terrain();
         void initialiser();
         void afficheTerrain();
