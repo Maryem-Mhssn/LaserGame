@@ -9,6 +9,14 @@ terrain::terrain(): d_cible{},d_laser{},d_mur{}
 
 }
 
+cible terrain::accesCible() const {
+    return d_cible;
+}
+
+laser terrain::accesLaser() const {
+    return d_laser;
+}
+
 
 void terrain::initialiser()
 {
@@ -17,13 +25,6 @@ void terrain::initialiser()
             if(i==0 || j==0 || i==DIM-1 || j==DIM-1) d_terrain[i][j]='*';
         };
     };
-
-
-    //juste pour tester
-    //d_cible.moveTo(0,5);
-    //d_laser.moveTo(19,7);
-    //d_terrain[d_cible.x()][d_cible.y()]='@';
-    //d_terrain[d_laser.x()][d_laser.y()]='#';
 
 }
 
@@ -42,21 +43,13 @@ void terrain::afficheTerrain()
 }
 void terrain::placeLaser()
 {
-    /*int x=rand()% DIM-1;
-    int y=rand()% DIM-1;
-
-
-    if(x==0||y==0||x==DIM-1||y==DIM-1){
-        d_laser.moveTo(x,y);
-        d_terrain[x][y]=d_laser.c();
-    }*/
     int x=0, y=0;
     do
     {
-        x=rand()% DIM-1;
-        y=rand()% DIM-1;
+        x=rand()% DIM;
+        y=rand()% DIM;
     }
-    while(!(x==0||y==0||x==DIM-1||y==DIM-1));
+    while(!(x==0||y==0||x==DIM||y==DIM));
     d_laser.moveTo(x,y);
     d_terrain[x][y]=d_laser.c();
 }
@@ -91,20 +84,13 @@ void terrain::placemirroir()
 
 void terrain::placecible()
 {
-    /*int x=rand()% DIM-1;
-    int y=rand()% DIM-1;
-
-    if(x==0||y==0||x==DIM-1||y==DIM-1){
-        d_cible.moveTo(x,y);
-        d_terrain[x][y]=d_cible.c();
-    }*/
     int x=0, y=0;
     do
     {
-        x=rand()% DIM-1;
-        y=rand()% DIM-1;
+        x=rand()% DIM;
+        y=rand()% DIM;
     }
-    while(!(x==0||y==0||x==DIM-1||y==DIM-1));
+    while(!(x==0||y==0||x==DIM||y==DIM));
     d_cible.moveTo(x,y);
     d_terrain[x][y]=d_cible.c();
 }

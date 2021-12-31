@@ -12,8 +12,9 @@
 class terrain
 {
     public:
-        //terrain de forme standard (� d�finir)
         terrain();
+        laser accesLaser() const;
+        cible accesCible() const;
         void initialiser();
         void afficheTerrain();
         void placeLaser();
