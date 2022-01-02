@@ -1,8 +1,14 @@
 #include "terrain.h"
 #include <iostream>
+#include<fstream>
+#include <ctime>
 using std::cout;
 using std::endl;
 using std::cin;
+using std::ofstream;
+using std::ifstream;
+
+
 
 terrain::terrain(): d_cible{},d_laser{},d_mur{}
 {
@@ -28,21 +34,22 @@ void terrain::initialiser()
 
 }
 
-void terrain::afficheTerrain()
+void terrain::afficheTerrain(std::ostream& ost)
 {
 
      for (int i=0; i<DIM; i++)
-     {  cout<<"   ";
+     {  ost<<"   ";
          for (int j=0; j<DIM; j++)
        {
-              cout<<d_terrain[i][j]<<" ";
+              ost<<d_terrain[i][j]<<" ";
        }
-       cout<<endl;
+       ost<<endl;
      }
 
 }
 void terrain::placeLaser()
 {
+    srand(time(0));
     int x=0, y=0;
     do
     {
@@ -95,5 +102,30 @@ void terrain::placecible()
     d_terrain[x][y]=d_cible.c();
 }
 
+void terrain::sauvegarderTerrain(string cheminFichier)
+{
+ofstream monTerrain(cheminFichier);
+monTerrain<<DIM<<endl;
+afficheTerrain(monTerrain);
+}
+
+void terrain::importerTerrain(string cheminFichier)
+ {
+ifstream monTerrain(cheminFichier);
+int dimension;
+monTerrain >> dimension;
+
+if (dimension>DIM)
+  {
+  cout << "terrain trop grand";
+  return;
+  }
+for (int i = 0; i < DIM; i++)
+{
+    for (int j = 0; j < DIM; j++){
+          monTerrain >> d_terrain[i][j];
+    }
+}
+ }
 
 

@@ -72,7 +72,8 @@ void partieJeu::lancerPartie()
                             t.initialiser();
                             t.placecible();
                             t.placeLaser();
-                            t.afficheTerrain();
+                            t.afficheTerrain(cout);
+
                             cout<<"Combien de miroir(s) souhaitez-vous placer ?"<<endl;
                             cin>>nbMiroirs;
                             for(int i=0;i < nbMiroirs; ++i)
@@ -80,7 +81,11 @@ void partieJeu::lancerPartie()
                                 t.placemirroir();
                             }
                             //t.accesLaser().tire();
-                            t.afficheTerrain();
+                            t.afficheTerrain(cout);
+
+                          // t.sauvegarderTerrain("terrain.txt");
+                          //t.importerTerrain("terrain.txt");
+                         // t.afficheTerrain(cout);
                             quitBool = true;
                             break;
                         }

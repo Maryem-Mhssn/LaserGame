@@ -5,9 +5,11 @@
 #include "laser.h"
 #include "mur.h"
 #include "mirroir.h"
+#include <iostream>
 #include <vector>
-
 #define DIM 20
+
+using std::string;
 
 class terrain
 {
@@ -16,13 +18,14 @@ class terrain
         laser accesLaser() const;
         cible accesCible() const;
         void initialiser();
-        void afficheTerrain();
+        void afficheTerrain(std::ostream& ost);
         void placeLaser();
         void placemirroir();
         void placecible();
+        void sauvegarderTerrain(string cheminFichier);
+        void importerTerrain(string cheminFichier);
 
-        void sauvegarderTerrain();
-        void importerTerrain();
+
 
     private:
         //Laser
@@ -37,6 +40,7 @@ class terrain
         char d_terrain[DIM][DIM]={' '};
 
 };
+
 
 #endif // TERRAIN_H
 
