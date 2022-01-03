@@ -69,18 +69,14 @@ void partieJeu::lancerPartie()
                             int nbMiroirs = 0;
                             cout << "                 LASER GAME" << endl;
                             terrain t{};
-                            t.initialiser();
-                            t.placecible();
-                            t.placeLaser();
                             t.afficheTerrain(cout);
-
                             cout<<"Combien de miroir(s) souhaitez-vous placer ?"<<endl;
                             cin>>nbMiroirs;
                             for(int i=0;i < nbMiroirs; ++i)
                             {
-                                t.placemirroir();
+                                t.placeMirroir();
                             }
-                            //t.accesLaser().tire();
+                            t.jouer();
                             t.afficheTerrain(cout);
 
                           // t.sauvegarderTerrain("terrain.txt");

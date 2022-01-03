@@ -2,6 +2,7 @@
 #include <iostream>
 #include<fstream>
 #include <ctime>
+#include<cstdlib>
 using std::cout;
 using std::endl;
 using std::cin;
@@ -12,7 +13,8 @@ using std::ifstream;
 
 terrain::terrain(): d_cible{},d_laser{},d_mur{}
 {
-
+   initialiser();
+   placeLaserCible();
 }
 
 cible terrain::accesCible() const {
@@ -29,6 +31,7 @@ void terrain::initialiser()
     for (int i=0; i<DIM; i++){
         for(int j=0; j<DIM; j++){
             if(i==0 || j==0 || i==DIM-1 || j==DIM-1) d_terrain[i][j]='*';
+            else d_terrain[i][j]=' ';
         };
     };
 
@@ -36,9 +39,8 @@ void terrain::initialiser()
 
 void terrain::afficheTerrain(std::ostream& ost)
 {
-
      for (int i=0; i<DIM; i++)
-     {  ost<<"   ";
+     {  ost<<"  ";
          for (int j=0; j<DIM; j++)
        {
               ost<<d_terrain[i][j]<<" ";
@@ -47,21 +49,38 @@ void terrain::afficheTerrain(std::ostream& ost)
      }
 
 }
-void terrain::placeLaser()
+void terrain::placeLaserCible()
 {
     srand(time(0));
-    int x=0, y=0;
+    int xc, yc, xl, yl;
     do
     {
-        x=rand()% DIM;
-        y=rand()% DIM;
+        xc=rand()% DIM ;
+        yc=rand()% DIM;
+    }  while(!(xc==0||yc==0||xc==DIM-1||yc==DIM-1));
+     do
+    {
+           xl=random(xc);
+           yl=random(yc);
+    }  while(!(xl==0||yl==0||xl==DIM-1||yl==DIM-1));
+
+    d_laser.moveTo(xl,yl);
+    placeBox(d_laser);
+    d_cible.moveTo(xc,yc);
+    placeBox(d_cible);
+}
+int terrain:: random(int a)
+{
+    int x;
+         x= rand()% DIM ;
+    if (x==a){
+        random(x);
     }
-    while(!(x==0||y==0||x==DIM||y==DIM));
-    d_laser.moveTo(x,y);
-    d_terrain[x][y]=d_laser.c();
+
+    return x;
 }
 
-void terrain::placemirroir()
+void terrain::placeMirroir()
 {
     int x, y;
     char c;
@@ -85,47 +104,52 @@ void terrain::placemirroir()
         cin>>c;
     }
     mirroir m {x, y, c};
-    //d_mirroir.push_back(m);
-    d_terrain[x][y]=c;
+    d_mirroir.push_back(m);
+    placeBox(m);
 }
 
-void terrain::placecible()
+
+void terrain::placeMur()
 {
-    int x=0, y=0;
-    do
-    {
-        x=rand()% DIM;
-        y=rand()% DIM;
-    }
-    while(!(x==0||y==0||x==DIM||y==DIM));
-    d_cible.moveTo(x,y);
-    d_terrain[x][y]=d_cible.c();
+
 }
 
 void terrain::sauvegarderTerrain(string cheminFichier)
 {
-ofstream monTerrain(cheminFichier);
-monTerrain<<DIM<<endl;
-afficheTerrain(monTerrain);
+    ofstream monTerrain(cheminFichier);
+    monTerrain<<DIM<<endl;
+    afficheTerrain(monTerrain);
 }
 
 void terrain::importerTerrain(string cheminFichier)
- {
-ifstream monTerrain(cheminFichier);
-int dimension;
-monTerrain >> dimension;
-
-if (dimension>DIM)
-  {
-  cout << "terrain trop grand";
-  return;
-  }
-for (int i = 0; i < DIM; i++)
 {
-    for (int j = 0; j < DIM; j++){
-          monTerrain >> d_terrain[i][j];
+    ifstream monTerrain(cheminFichier);
+    int dimension;
+    monTerrain >> dimension;
+
+    if (dimension>DIM)
+      {
+          cout << "terrain trop grand";
+          return;
+      }
+    for (int i = 0; i < DIM; i++)
+    {
+        for (int j = 0; j < DIM; j++)
+        {
+              monTerrain >> d_terrain[i][j];
+        }
     }
 }
- }
 
+void terrain::placeBox(const box b)
+{
+    d_terrain[b.x()][b.y()]=b.c();
+}
 
+void terrain::jouer()
+{
+    vector<box> jeu = d_laser.tire();
+    for (const auto& b : jeu)
+        placeBox(b);
+    cout<<"oui"<<endl;
+}

@@ -12,18 +12,19 @@
 
 1639149227 d:\college things\l3 miage\lasergame\laser game\include\position.h
 
-1641134602 source:c:\users\mao-m\documents\lasergame\laser game\src\partiedujeu.cpp
+1641216726 source:c:\users\mao-m\documents\lasergame\laser game\src\partiedujeu.cpp
 	"partieDuJeu.h"
 
 1641069195 c:\users\mao-m\documents\lasergame\laser game\include\partiedujeu.h
 	<iostream>
 	"terrain.h"
 
-1641069195 source:c:\users\mao-m\documents\lasergame\laser game\src\laser.cpp
+1641215622 source:c:\users\mao-m\documents\lasergame\laser game\src\laser.cpp
 	"laser.h"
 
-1641069195 c:\users\mao-m\documents\lasergame\laser game\include\laser.h
+1641215752 c:\users\mao-m\documents\lasergame\laser game\include\laser.h
 	"box.h"
+	<vector>
 
 1641069195 c:\users\mao-m\documents\lasergame\laser game\include\box.h
 
@@ -47,7 +48,7 @@
 	"terrain.h"
 	"partieDuJeu.h"
 
-1641134551 c:\users\mao-m\documents\lasergame\laser game\include\terrain.h
+1641215966 c:\users\mao-m\documents\lasergame\laser game\include\terrain.h
 	"box.h"
 	"cible.h"
 	"laser.h"
@@ -56,17 +57,18 @@
 	<iostream>
 	<vector>
 
-1641069195 source:c:\users\mao-m\documents\lasergame\laser game\src\mur.cpp
+1641157469 source:c:\users\mao-m\documents\lasergame\laser game\src\mur.cpp
 	"mur.h"
 
 1641069195 c:\users\mao-m\documents\lasergame\laser game\include\mur.h
 	"box.h"
 
-1641134674 source:c:\users\mao-m\documents\lasergame\laser game\src\terrain.cpp
+1641215103 source:c:\users\mao-m\documents\lasergame\laser game\src\terrain.cpp
 	"terrain.h"
 	<iostream>
 	<fstream>
 	<ctime>
+	<cstdlib>
 
 1639932993 source:c:\users\mao-m\onedrive\bureau\lasergameproject\lasergame\laser game\main.cpp
 	<iostream>

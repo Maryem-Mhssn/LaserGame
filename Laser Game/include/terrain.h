@@ -17,11 +17,14 @@ class terrain
         terrain();
         laser accesLaser() const;
         cible accesCible() const;
+        int random(int a);
         void initialiser();
         void afficheTerrain(std::ostream& ost);
-        void placeLaser();
-        void placemirroir();
-        void placecible();
+        void placeLaserCible();
+        void placeMirroir();
+        void placeMur();
+        void placeBox(const box b);
+        void jouer();
         void sauvegarderTerrain(string cheminFichier);
         void importerTerrain(string cheminFichier);
 
@@ -37,7 +40,7 @@ class terrain
         //murs
         std::vector <mur> d_mur;
         //terrain sous forme de matrice
-        char d_terrain[DIM][DIM]={' '};
+        char d_terrain[DIM][DIM];
 
 };
 
