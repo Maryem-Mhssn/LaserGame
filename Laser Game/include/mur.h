@@ -1,7 +1,7 @@
 /**
- * \file mur.h
- * \author Aurelia Antz
- * \brief Fichier header contenant la classe mur
+ * @headerfile mur.h
+ * @author Aurelia Antz
+ * @brief Fichier header contenant la classe mur
  */
 
 #ifndef MUR_H
@@ -29,10 +29,6 @@ public:
      * @param y Position y du mur
      */
     mur(int x, int y);
-
-
-
-
 
     /**
      * @fn int taille() const
