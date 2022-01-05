@@ -7,6 +7,7 @@
 #ifndef MUR_H
 #define MUR_H
 #include "box.h"
+#include <vector>
 
 /**
  * @class mur
