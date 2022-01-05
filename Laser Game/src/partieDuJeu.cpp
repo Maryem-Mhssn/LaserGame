@@ -76,8 +76,10 @@ void partieJeu::lancerPartie()
                             {
                                 t.placeMirroir();
                             }
+                            t.afficheTerrain(cout);
                             t.jouer();
                             t.afficheTerrain(cout);
+
 
                           // t.sauvegarderTerrain("terrain.txt");
                           //t.importerTerrain("terrain.txt");

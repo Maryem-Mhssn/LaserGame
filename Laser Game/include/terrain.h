@@ -17,7 +17,13 @@ class terrain
         terrain();
         laser accesLaser() const;
         cible accesCible() const;
+        char accesCase(const box b) const;
         int random(int a);
+        void setChar(char c,box b);
+        void lanceVersDroite(box& b);
+        int lanceVersGauche(box b);
+        int lanceVersHaut(box b);
+        int lanceVersBas(box b);
         void initialiser();
         void afficheTerrain(std::ostream& ost);
         void placeLaserCible();

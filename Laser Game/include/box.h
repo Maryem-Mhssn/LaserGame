@@ -9,6 +9,7 @@ public:
     int y()const;
     char c() const;
     void moveTo(int x, int y);
+    void setC(char c);
     bool operator==(const box& b) const;
     bool operator!=(const box& b) const;
 private:

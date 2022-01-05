@@ -27,7 +27,10 @@ void box::moveTo(int x, int y)
     d_x = x;
     d_y = y;
 }
-
+void box::setC(char c)
+{
+    d_c=c;
+}
 
 
 bool box::operator==(const box& b) const
