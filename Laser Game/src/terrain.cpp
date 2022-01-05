@@ -116,7 +116,7 @@ void terrain::placeMirroir()
     placeBox(m);
     }
     else {
-        cout<<"mirroir existe déjà"<<endl;
+        cout<<"mirroir existe dï¿½jï¿½"<<endl;
         placeMirroir();
     }
     */
@@ -133,6 +133,22 @@ void terrain::placeMirroir()
 
 void terrain::placeMur()
 {
+    int x = 1 + rand() / (RAND_MAX/(DIM-2));
+    int y = 1 + rand() / (RAND_MAX/(DIM-2));
+    int taille = 1 + rand() / (RAND_MAX/(TAILLE_MAX_MUR-1));
+
+    mur m{x,y,taille};
+
+    int sens = rand()%1;
+
+    if(sens == 1){
+        m.creationHorizontale();
+    }
+    else{
+        m.creationVerticale();
+    }
+
+    placeBox(m);
 
 }
 

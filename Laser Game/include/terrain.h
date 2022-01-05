@@ -15,6 +15,7 @@
 #include <iostream>
 #include <vector>
 #define DIM 20
+#define TAILLE_MAX_MUR 4
 
 using std::string;
 
