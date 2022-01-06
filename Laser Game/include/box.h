@@ -59,12 +59,14 @@ public:
     void moveTo(int x, int y);
     void setC(char c);
 
+
     /**
      * @fn bool operator==(const box& b) const
      * @brief Surcharge de l'opérateur ==
      * @param b Box
      * @return true si les boxes sont égales, false sinon
      */
+
     bool operator==(const box& b) const;
 
     /**
