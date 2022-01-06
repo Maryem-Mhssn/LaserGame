@@ -58,10 +58,7 @@ public:
      */
     void moveTo(int x, int y);
     void setC(char c);
-<<<<<<< HEAD
-=======
 
->>>>>>> 651aad1ff75b1c601df90f5d6194814856a72f1f
 
     /**
      * @fn bool operator==(const box& b) const
@@ -69,10 +66,7 @@ public:
      * @param b Box
      * @return true si les boxes sont égales, false sinon
      */
-<<<<<<< HEAD
-=======
 
->>>>>>> 651aad1ff75b1c601df90f5d6194814856a72f1f
     bool operator==(const box& b) const;
 
     /**
