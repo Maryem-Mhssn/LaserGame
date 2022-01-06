@@ -1,6 +1,6 @@
 /**
  * @headerfile cible.h
- * @author
+ * @author Aurelia Antz , Edona Dibra , Maryem Mouhssine , Malalanirina Rakotomamonjy
  * @brief Fichier header contenant la classe cible
  */
 #ifndef CIBLE_H
@@ -13,14 +13,14 @@
 class cible : public box
 {
 public:
-    
+
     /**
      * @fn cible ()
      * @brief Constructeur
      *
      */
     cible();
-    
+
     /**
         @fn cible(int x, int y, char c)
         @brief Constructeur
@@ -29,14 +29,14 @@ public:
         @param c caractere x de la cible
     */
     cible(int x, int y, char c);
-    
+
     /**
      * @fn void setTouched()
      * @brief définit la cible comme étant touchée
      */
     void setTouched();
-    
-    
+
+
     /**
      * @fn void touched()
      * @brief renvoie si la cible a été touché ou non

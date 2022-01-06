@@ -53,9 +53,11 @@ void partieJeu::lancerPartie()
 
                         cout<<"            ---Choses a noter---"<<endl;
 
-                        cout<<"     1. Vous n'avez que 3 miroirs"<<endl;
+                        cout<<"     1. Les cases sont numerotees de 0 a 19"<<endl;
 
                         cout<<"     2. Vous n'avez qu'une seule tentative"<<endl;
+
+                        cout<<"     3. Les x sont en verticale et les y en horizontale"<<endl;
 
                         cout<<endl;
 
@@ -64,7 +66,6 @@ void partieJeu::lancerPartie()
                         break;
                     case 'P':
                     case 'p':
-                        //cout<<"Oups! toujours en r�alisation ;-)";
                         {
                             int nbMiroirs = 0;
                             cout << "                 LASER GAME" << endl;
@@ -79,11 +80,6 @@ void partieJeu::lancerPartie()
                             t.afficheTerrain(cout);
                             t.jouer();
                             t.afficheTerrain(cout);
-
-
-                          // t.sauvegarderTerrain("terrain.txt");
-                          //t.importerTerrain("terrain.txt");
-                         // t.afficheTerrain(cout);
                             quitBool = true;
                             break;
                         }

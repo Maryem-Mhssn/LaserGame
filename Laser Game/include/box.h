@@ -1,6 +1,6 @@
 /**
  * @headerfile box.h
- * @author
+ * @author Aurelia Antz , Edona Dibra , Maryem Mouhssine , Malalanirina Rakotomamonjy
  * @brief Fichier header contenant la classe box
  */
 
@@ -58,6 +58,11 @@ public:
      */
     void moveTo(int x, int y);
 
+    /**
+     * @fn void setC(char c)
+     * @brief Changer le caractère par c
+     * @param c Nouveau caractere c
+     */
     void setC(char c);
 
 

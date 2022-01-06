@@ -306,63 +306,119 @@ void terrain::jouer()
     execution(sens,ch,current);
 }
 
-void terrain::execution(char& testSens, char& testCharacter, box& testCurrent)
+void terrain ::execution (char& testSens, char& testCharacter, box& testCurrent)
 {
-    int i=0;
-    if (testCharacter != '*' && testCharacter != '@')
-    {
-        if(testSens=='v')
-        {
-            if (testCharacter=='/')
+        int i=0;
+        if (testCharacter != '*' && testCharacter != '@'&& testCharacter != 'X')
             {
-                i=lanceVersGauche(testCurrent);
-                testCurrent.moveTo(testCurrent.x(),testCurrent.y()-i-1);
-            }
-            else if (testCharacter=='\\')
-            {
-                i=lanceVersDroite(testCurrent);
-                testCurrent.moveTo(testCurrent.x(),testCurrent.y()+i+1);
-            }
+                if(testSens=='h')
+                {
+                    if (testCharacter=='/')
+                    {
+                           i=lanceVersGauche(testCurrent);
+                           testCurrent.moveTo(testCurrent.x(),testCurrent.y()-i-1);
+                           testSens='d';
+                    }
+                    else if (testCharacter=='\\')
+                    {
+                           i=lanceVersDroite(testCurrent);
+                           testCurrent.moveTo(testCurrent.x(),testCurrent.y()+i+1);
+                           testSens='d';
+                    }
 
-            testCharacter=d_terrain[testCurrent.x()][testCurrent.y()];
-            testSens='h';
-        }
+                       testCharacter=d_terrain[testCurrent.x()][testCurrent.y()];
+                }
+                if(testSens=='b')
+                {
+                    if (testCharacter=='\\')
+                    {
+                           i=lanceVersGauche(testCurrent);
+                           testCurrent.moveTo(testCurrent.x(),testCurrent.y()-i-1);
+                           testSens='g';
+                    }
+                    else if (testCharacter=='/')
+                    {
+                           i=lanceVersDroite(testCurrent);
+                           testCurrent.moveTo(testCurrent.x(),testCurrent.y()+i+1);
+                           testSens='d';
+                    }
 
-        else if(testSens=='h')
-        {
-            if (testCharacter=='/')
-            {
-                i=lanceVersBas(testCurrent);
-                testCurrent.moveTo(testCurrent.x()+i+1,testCurrent.y());
-            }
-            else if (testCharacter=='\\')
-            {
-                i=lanceVersHaut(testCurrent);
-                testCurrent.moveTo(testCurrent.x()-i-1,testCurrent.y());
-            }
-            testCharacter=d_terrain[testCurrent.x()][testCurrent.y()];
-            testSens='v';
+                       testCharacter=d_terrain[testCurrent.x()][testCurrent.y()];
+
+                }
+
+                    else if(testSens=='d')
+                {
+                    if (testCharacter=='/')
+                       {
+                           i=lanceVersBas(testCurrent);
+                           testCurrent.moveTo(testCurrent.x()+i+1,testCurrent.y());
+                            testSens='b';
+                       }
+                    else if (testCharacter=='\\')
+                       {
+                           i=lanceVersHaut(testCurrent);
+                           testCurrent.moveTo(testCurrent.x()-i-1,testCurrent.y());
+                            testSens='h';
+                       }
+                       testCharacter=d_terrain[testCurrent.x()][testCurrent.y()];
+
+                }
+                else if(testSens=='g')
+                {
+                    if (testCharacter=='\\')
+                       {
+                           i=lanceVersBas(testCurrent);
+                           testCurrent.moveTo(testCurrent.x()+i+1,testCurrent.y());
+                           testSens='b';
+                       }
+                    else if (testCharacter=='/')
+                       {
+                           i=lanceVersHaut(testCurrent);
+                           testCurrent.moveTo(testCurrent.x()-i-1,testCurrent.y());
+                           testSens='h';
+                       }
+                       testCharacter=d_terrain[testCurrent.x()][testCurrent.y()];
+
+                }
+                 execution(testSens,testCharacter,testCurrent);
         }
-        execution(testSens,testCharacter,testCurrent);
-    }
+       else  if (testCharacter == '@')
+       {
+            d_cible.setTouched();
+       }
+       else if (testCharacter == 'X'||testCharacter == '*')
+       {
+            cout<<" ----------------Vous avez touche un mur ------------------"<<endl;
+            cout<<" -------------------Vous avez Perdu ! ---------------------"<<endl;
+       }
 
 }
 
-char terrain::sensLaser(box& b)
+char terrain :: sensLaser(box& b)
 {
-    char sens;
-    int x=b.x();
-    int y=b.y();
+        char sens;
+        int x=b.x();
+        int y=b.y();
+        if (d_terrain[x+1][y]=='|')
 
-    if (d_terrain[x+1][y]=='|'||d_terrain[x-1][y]=='|')
-    {
-        sens='v';
-    }
-    else if (d_terrain[x][y+1]=='-'||d_terrain[x][y-1]=='-')
-    {
-        sens='h';
-    }
-    return sens;
+        {
+            sens='b';
+        }
+        else if(d_terrain[x-1][y]=='|')
+        {
+            sens='h';
+        }
+        else if (d_terrain[x][y+1]=='-'||d_terrain[x][y-1]=='-')
+        {
+            sens='d';
+        }
+        else if (d_terrain[x][y-1]=='-')
+        {
+            sens='g';
+        }
+
+        return sens;
 }
 
 void terrain::setChar(char c,box b)

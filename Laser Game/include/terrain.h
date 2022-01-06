@@ -1,6 +1,6 @@
 /**
  * @headerfile terrain.h
- * @author
+ * @author Aurelia Antz , Edona Dibra , Maryem Mouhssine , Malalanirina Rakotomamonjy
  * @brief Fichier header contenant la définition de la classe terrain
  */
 
@@ -91,7 +91,21 @@ public:
      */
     int lanceVersBas(box& b);
 
+    /**
+     * @fn int lanceVersBas(box& b)
+     * @brief Tire le laser vers le bas
+     * @param testSens nouveau sens de tir
+     * @param testCharacter caractere de la box
+     * @param testCurrent box ou le tir passe
+     */
     void execution (char& testSens, char& testCharacter, box& testCurrent);
+
+    /**
+     * @fn char sensLaser(box& b)
+     * @brief Renvoie le sens de tir du laser
+     * @param b Box où le tir passe
+     * @return un char donnant le sens de tir
+     */
     char sensLaser(box& b);
 
 
@@ -128,6 +142,8 @@ public:
      * @brief Place un miroir sur le terrain
      */
     void placeMirroir();
+
+
 
     /**
      * @fn void placeMur()

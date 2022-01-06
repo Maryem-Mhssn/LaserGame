@@ -1,11 +1,14 @@
 # depslib dependency file v1.0
-1639148888 source:d:\college things\l3 miage\lasergame\laser game\main.cpp
+1641483814 source:d:\college things\l3 miage\lasergame\laser game\main.cpp
 	<iostream>
+	"terrain.h"
+	"partieDuJeu.h"
 
-1639148888 source:d:\college things\l3 miage\lasergame\laser game\src\mirroir.cpp
+1641483814 source:d:\college things\l3 miage\lasergame\laser game\src\mirroir.cpp
 	"mirroir.h"
 
-1639148888 d:\college things\l3 miage\lasergame\laser game\include\mirroir.h
+1641486137 d:\college things\l3 miage\lasergame\laser game\include\mirroir.h
+	"box.h"
 
 1639149227 source:d:\college things\l3 miage\lasergame\laser game\src\position.cpp
 	"position.h"
@@ -224,4 +227,53 @@
 1640876642 source:d:\college things\l3 miage\lasergame\lasergame\laser game\src\terrain.cpp
 	"terrain.h"
 	<iostream>
+
+1641483814 source:d:\college things\l3 miage\lasergame\laser game\src\box.cpp
+	"box.h"
+
+1641486136 d:\college things\l3 miage\lasergame\laser game\include\box.h
+
+1641484847 source:d:\college things\l3 miage\lasergame\laser game\src\cible.cpp
+	"cible.h"
+	<iostream>
+
+1641486137 d:\college things\l3 miage\lasergame\laser game\include\cible.h
+	"box.h"
+
+1641485844 source:d:\college things\l3 miage\lasergame\laser game\src\laser.cpp
+	"laser.h"
+
+1641486137 d:\college things\l3 miage\lasergame\laser game\include\laser.h
+	"box.h"
+	<vector>
+
+1641483814 source:d:\college things\l3 miage\lasergame\laser game\src\mur.cpp
+	"mur.h"
+
+1641483814 d:\college things\l3 miage\lasergame\laser game\include\mur.h
+	"box.h"
+	<vector>
+
+1641486878 d:\college things\l3 miage\lasergame\laser game\include\terrain.h
+	"box.h"
+	"cible.h"
+	"laser.h"
+	"mur.h"
+	"mirroir.h"
+	<iostream>
+	<vector>
+
+1641486137 d:\college things\l3 miage\lasergame\laser game\include\partiedujeu.h
+	<iostream>
+	"terrain.h"
+
+1641485104 source:d:\college things\l3 miage\lasergame\laser game\src\partiedujeu.cpp
+	"partieDuJeu.h"
+
+1641486403 source:d:\college things\l3 miage\lasergame\laser game\src\terrain.cpp
+	"terrain.h"
+	<iostream>
+	<fstream>
+	<ctime>
+	<cstdlib>
 

@@ -1,6 +1,6 @@
 /**
  * @headerfile mirroir.h
- * @author
+ * @author Aurelia Antz , Edona Dibra , Maryem Mouhssine , Malalanirina Rakotomamonjy
  * @brief Fichier header contenant la classe mirroir
  */
 

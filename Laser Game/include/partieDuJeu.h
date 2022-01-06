@@ -1,6 +1,6 @@
 /**
  * @headerfile partieDuJeu.h
- * @author
+ * @author Aurelia Antz , Edona Dibra , Maryem Mouhssine , Malalanirina Rakotomamonjy
  * @brief Fichier header gérant une partie de jeu
  */
 
