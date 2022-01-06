@@ -15,8 +15,8 @@
 #include <iostream>
 #include <vector>
 #define DIM 20
-#define TAILLE_MAX_MUR 4
-#define NOMBRE_MAX_MUR 2
+#define TAILLE_MAX_MUR 7
+#define NOMBRE_MAX_MUR 4
 
 using std::string;
 
@@ -97,6 +97,7 @@ class terrain
         mur initialisationMur();
         int creationMurVertical(box& b,int taille,int iterateur);
         int creationMurHorizontal(box& b,int taille,int iterateur);
+        void sensMur();
 
         /**
          * @fn placeBox(const box b)

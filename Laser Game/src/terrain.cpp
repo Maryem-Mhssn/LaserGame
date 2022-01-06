@@ -163,24 +163,44 @@ int terrain::creationMurHorizontal(box& b,int taille,int iterateur){
     return i;
 }
 
-int terrain::creationMurVertical(box& b,int taille,int iterateur){
+int terrain::creationMurVertical(box& b,int taille,int iterateur) {
     int i = 0;
-    char next = d_terrain[b.x()][b.y()-1];
-    char prev = d_terrain[b.x()][b.y()+1];
-    char up = d_terrain[b.x()+1][b.y()];
-    char down = d_terrain[b.x()-1][b.y()];
+    char next = d_terrain[b.x()][b.y() - 1];
+    char prev = d_terrain[b.x()][b.y() + 1];
+    char up = d_terrain[b.x() + 1][b.y()];
+    char down = d_terrain[b.x() - 1][b.y()];
 
-    if((next!='*') && (iterateur < taille)
-       && (next!='#' && prev!='#' && up!='#' && down!='#')
-       && (next!='@' && prev!='@' && up!='@' && down!='@')
-       ){
-        box nextBox{b.x()-1,b.y(),'X'};
+    if ((next != '*') && (iterateur < taille)
+        && (next != '#' && prev != '#' && up != '#' && down != '#')
+        && (next != '@' && prev != '@' && up != '@' && down != '@')
+            ) {
+        box nextBox{b.x() - 1, b.y(), 'X'};
         placeBox(nextBox);
         iterateur++;
-        i+= creationMurVertical(nextBox,taille,iterateur)+1;
+        i += creationMurVertical(nextBox, taille, iterateur) + 1;
     }
 
     return i;
+
+}
+
+void terrain::sensMur(){
+   int sens = rand()%1;
+
+   if(sens == 1){
+       mur m = initialisationMur();
+       placeBox(m);
+       box next{m.x()-1, m.y(), m.c()};
+       creationMurVertical(next,m.taille(),0);
+       placeBox(next);
+   }
+   else{
+       mur n = initialisationMur();
+       placeBox(n);
+       box prev{n.x(),n.y()-1,n.c()};
+       creationMurHorizontal(prev,n.taille(),0);
+       placeBox(prev);
+   }
 }
 
 void terrain::placeMur() {
@@ -188,54 +208,12 @@ void terrain::placeMur() {
     int nbMurs = 1 + rand() / (RAND_MAX/(NOMBRE_MAX_MUR-1));
 
     for(int i = 0;i < nbMurs;i++){
-        mur m = initialisationMur();
-        placeBox(m);
-        mur n = initialisationMur();
-        placeBox(n);
-        box next{m.x()-1, m.y(), m.c()};
-        creationMurVertical(next,m.taille(),0);
-        box prev{n.x(),n.y()-1,n.c()};
-        creationMurHorizontal(prev,n.taille(),0);
-        placeBox(next);
+        sensMur();
     }
 
 };
 
-/*
-void terrain::placeMur()
-{
-    int x = 1 + rand() / (RAND_MAX/(DIM-2));
-    int y = 1 + rand() / (RAND_MAX/(DIM-2));
-    int taille = 1 + rand() / (RAND_MAX/(TAILLE_MAX_MUR-1));
 
-    //mur m{x,y,taille};
-
-    /*int sens = rand()%1;
-
-    if(sens == 1){
-        m.creationHorizontale();
-    }
-    else{
-        m.creationVerticale();
-     }*/
-/*
-    for(int i = x;i < taille;i++){
-        mur m{i,y};
-        d_mur.push_back(m);
-    }
-
-    /*for(int i=0;i<d_mur.size();i++){
-        d_mur[i].moveTo(d_mur[i].x(),d_mur[i].y());
-        placeBox(d_mur[i]);
-    }*/
-/*
-    for(const auto& b:d_mur){
-        placeBox(b);
-    }
-
-
-}*/
-/*
 void terrain::sauvegarderTerrain(string cheminFichier)
 {
     ofstream monTerrain(cheminFichier);
@@ -261,7 +239,7 @@ void terrain::importerTerrain(string cheminFichier)
               monTerrain >> d_terrain[i][j];
         }
     }
-}*/
+}
 
 void terrain::placeBox(const box b)
 {
