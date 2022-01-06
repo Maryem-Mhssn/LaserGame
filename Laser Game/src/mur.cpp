@@ -10,9 +10,10 @@ int mur::taille() const {
 
 void mur::creationVerticale() {
 
-    for(int i =x() ;i < d_taille;i++){
+    for(int i = x() ;i < d_taille;i++){
         mur m{i,y()};
     }
+
 }
 
 void mur::creationHorizontale() {

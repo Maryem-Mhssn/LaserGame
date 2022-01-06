@@ -15,6 +15,8 @@
 #include <iostream>
 #include <vector>
 #define DIM 20
+#define TAILLE_MAX_MUR 7
+#define NOMBRE_MAX_MUR 4
 
 using std::string;
 
@@ -44,6 +46,7 @@ class terrain
          * @return d_cible
          */
         cible accesCible() const;
+<<<<<<< HEAD
         char accesCase(const box b) const;
         void setChar(char c,box b);
         void execute(char& sens,box& current,char& c);
@@ -53,6 +56,15 @@ class terrain
         int lanceVersGauche(box& b);
         int lanceVersHaut(box& b);
         int lanceVersBas(box& b);
+=======
+
+        char accesCase(const box b) const;
+        void setChar(char c,box b);
+        void lanceVersDroite(box& b);
+        int lanceVersGauche(box b);
+        int lanceVersHaut(box b);
+        int lanceVersBas(box b);
+>>>>>>> 651aad1ff75b1c601df90f5d6194814856a72f1f
 
 
         /**
@@ -94,6 +106,10 @@ class terrain
          * @brief Place un mur sur le terrain
          */
         void placeMur();
+        mur initialisationMur();
+        int creationMurVertical(box& b,int taille,int iterateur);
+        int creationMurHorizontal(box& b,int taille,int iterateur);
+        void sensMur();
 
         /**
          * @fn placeBox(const box b)
