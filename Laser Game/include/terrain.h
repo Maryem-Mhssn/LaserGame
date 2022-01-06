@@ -46,14 +46,23 @@ class terrain
          * @return d_cible
          */
         cible accesCible() const;
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> parent of ffd167a (methodes du tir du laser)
         char accesCase(const box b) const;
+        int random(int a);
         void setChar(char c,box b);
         void lanceVersDroite(box& b);
         int lanceVersGauche(box b);
         int lanceVersHaut(box b);
         int lanceVersBas(box b);
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> parent of ffd167a (methodes du tir du laser)
 
         /**
          * @fn int random(int a);
@@ -67,7 +76,7 @@ class terrain
          * @fn void initialiser()
          * @brief Initialise le terrain
          */
-
+>>>>>>> 96125549846e264dfec6145c80b40f32df12e06e
         void initialiser();
 
         /**

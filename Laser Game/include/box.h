@@ -57,7 +57,9 @@ public:
      * @param y Nouvelle position y
      */
     void moveTo(int x, int y);
+
     void setC(char c);
+
 
 
     /**
